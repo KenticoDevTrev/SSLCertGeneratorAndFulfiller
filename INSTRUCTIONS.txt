@@ -1,0 +1,20 @@
+FIRST TIME ONLY:
+Edit the CertRequestGenerator.ps1 to include your cert's Company name, City, State, Country, and department.
+
+All certs must exist on the IIS Server first, this tool only helpes with renewing certs and rebinding on IIS.
+
+If you don't have any certs, you can use the SingleRequestGenerator.ps1 to generate the requests, once imported you'll need to manually bind any site's https to the cert one time.
+
+-----------------------
+ALL OTHER TIMES:
+
+Run CertRequestGenerator.ps1 to generate the requests, zip up any that you wish and send for fulfillment.
+
+Once the responses from the SSL Cert provider are gathered, put them in the Responses folder, and rename them to the following format:
+domain.name.crt
+
+(ex: direct.mysite.us.crt)
+
+Then run the CertImporter.ps1 which will Import, Fix, Update Bindings, and export for external things like CDNs (see Exported folder)
+
+Once all operations are complete, make sure to delete the old SSL Certs so next time you run the CertRequestGenerator.ps1 it doesn't have duplicates.

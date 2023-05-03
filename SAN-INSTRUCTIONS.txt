@@ -1,0 +1,10 @@
+https://www.golinuxcloud.com/openssl-subject-alternative-name/
+
+These files are in the C:\certs\SANCerts, run OpenSSL and go to this folder.
+
+I *Believe* all the prep work should be one time, leaving only you to modify the server_cert.cnf with the domain you wish to use, then run:
+
+openssl req -new -key server.key -out server.csr -config server_cert.cnf
+
+
+Can possibly do a powershell at some point to take the root domain and generate these requests by generating a new DOMAINHERE_cert.cnf and running the open SSL Command
